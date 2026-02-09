@@ -124,21 +124,17 @@ const educationList = [
 
 <style scoped>
 .education-view {
-  min-height: 100vh;
+  min-height: calc(100dvh - 72px);
   padding: 20px var(--spacing-6) 60px;
-  background-color: #f8fafc;
   position: relative;
-  overflow: hidden;
 }
 
 /* Background Blobs */
 .bg-blobs {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
+  position: fixed;
+  inset: 0;
+  background-color: #f8fafc;
+  z-index: -1;
   pointer-events: none;
 }
 

@@ -4,6 +4,7 @@ const currentPath = ref(window.location.hash || '#/')
 
 window.addEventListener('hashchange', () => {
     currentPath.value = window.location.hash || '#/'
+    window.scrollTo(0, 0)
 })
 
 export const useRouter = () => {

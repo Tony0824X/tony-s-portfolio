@@ -12,7 +12,7 @@
           <h1 class="profile-name">HO Chun Chit, Tony</h1>
         </div>
         
-        <p class="profile-title">HKU MSc 27'<br>Full Stack Software Engineer</p>
+        <p class="profile-title">HKU MSc 27'<br>Full Stack Software Engineer<br>Project Manager | Product Manager</p>
         
         <div class="social-icons">
           <!-- Gmail -->
@@ -75,7 +75,7 @@
         <div class="stats">
           <div class="stat-item">
             <span class="stat-label">Scholarships</span>
-            <span class="stat-value">8+</span>
+            <span class="stat-value">120k+</span>
           </div>
           <div class="stat-item">
             <span class="stat-label">Portfolio</span>
@@ -298,6 +298,7 @@ const copyToClipboard = async (text, type) => {
   align-items: flex-end;
 }
 
+
 .stat-label {
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
@@ -308,5 +309,78 @@ const copyToClipboard = async (text, type) => {
   font-size: 2rem;
   font-weight: 700;
   color: var(--color-text-primary);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 968px) {
+  .profile-section {
+    margin-top: -60px;
+    padding: 0 var(--spacing-4);
+  }
+
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-6);
+  }
+
+  .profile-image-wrapper {
+    width: 200px;
+    height: 300px;
+  }
+
+  .profile-info {
+    padding-top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-header {
+    justify-content: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+    margin-bottom: var(--spacing-4);
+  }
+
+  .stats-section {
+    padding-top: 20px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .company-icons {
+    justify-content: center;
+  }
+
+  .stats {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-6);
+    justify-items: center;
+  }
+
+  .stat-item {
+    align-items: center;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats {
+    gap: var(--spacing-4);
+  }
+  
+  .profile-name {
+    font-size: 2rem;
+  }
 }
 </style>
