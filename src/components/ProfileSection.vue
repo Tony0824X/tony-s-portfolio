@@ -3,7 +3,7 @@
     <div class="profile-container">
       <!-- Profile Image -->
       <div class="profile-image-wrapper">
-        <img src="../assets/profile.png" alt="Irene Brooks" class="profile-image" />
+        <img src="../assets/profile.png" alt="Tony Ho" class="profile-image" />
       </div>
       
       <!-- Profile Info -->
