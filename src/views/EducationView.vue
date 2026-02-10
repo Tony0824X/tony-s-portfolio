@@ -31,7 +31,7 @@
             <div class="card-inner">
               <div class="card-header">
                 <div class="edu-icon-container" :style="{ background: edu.iconBg }">
-                  <component :is="edu.icon" />
+                  <img :src="edu.logo" :alt="edu.school" class="school-logo" />
                 </div>
                 <div class="header-text">
                   <p class="edu-period">{{ edu.period }}</p>
@@ -57,6 +57,9 @@
 
 <script setup>
 import { h, onMounted } from 'vue'
+import hkuLogo from '../assets/education/hku.png'
+import hkbuLogo from '../assets/education/hkbu.png'
+import vtcLogo from '../assets/education/vtc.png'
 
 // Custom Directives for Animations
 const vAnimate = {
@@ -78,46 +81,31 @@ const vAnimate = {
   }
 }
 
-const SchoolIcon = (color) => {
-  return h('svg', { 
-    width: '24', height: '24', viewBox: '0 0 24 24', fill: 'none', 
-    stroke: 'currentColor', 'stroke-width': '2', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' 
-  }, [
-    h('path', { d: 'M22 10v6M2 10l10-5 10 5-10 5z' }),
-    h('path', { d: 'M6 12v5c3 3 9 3 12 0v-5' })
-  ])
-}
 
 const educationList = [
   {
-    school: "The University of Hong Kong",
+    id: 1,
     period: "2026 — 2027",
+    school: "The University of Hong Kong",
     degree: "Incoming MSc (Hons) in Computer Science",
-    iconBg: "linear-gradient(135deg, #ef4444, #991b1b)",
-    icon: () => SchoolIcon('#ef4444'),
-    details: ["Artificial Intelligence", "Decentralized Technologies"]
+    tags: ["Artificial Intelligence", "Decentralized Technologies"],
+    logo: hkuLogo
   },
   {
-    school: "Hong Kong Baptist University",
+    id: 2,
     period: "2024 — 2026",
+    school: "Hong Kong Baptist University",
     degree: "BSc (Hons) in Computer Science",
-    iconBg: "linear-gradient(135deg, #3b82f6, #1e40af)",
-    icon: () => SchoolIcon('#3b82f6'),
-    details: [
-      "GPA: 3.48 / 4.0",
-      "Dean's List (2024-25)"
-    ]
+    tags: ["GPA: 3.48 / 4.0", "Dean's List (2024-25)"],
+    logo: hkbuLogo
   },
   {
-    school: "Hong Kong Institute of Vocational Education",
+    id: 3,
     period: "2022 — 2024",
+    school: "Hong Kong Institute of Vocational Education",
     degree: "Higher Diploma in Software Engineering",
-    iconBg: "linear-gradient(135deg, #10b981, #065f46)",
-    icon: () => SchoolIcon('#10b981'),
-    details: [
-      "GPA: 3.87 / 4.0",
-      "Distinction"
-    ]
+    tags: ["GPA: 3.87 / 4.0", "Distinction"],
+    logo: vtcLogo
   }
 ]
 </script>
@@ -181,6 +169,13 @@ const educationList = [
   margin: 0 auto;
   position: relative;
   z-index: 1;
+}
+
+.school-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px; /* Add some padding so logo doesn't touch edges */
 }
 
 .header-section {

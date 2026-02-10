@@ -1,20 +1,29 @@
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 
-const currentPath = ref(window.location.hash || '#/')
-
-window.addEventListener('hashchange', () => {
-    currentPath.value = window.location.hash || '#/'
-    window.scrollTo(0, 0)
-})
+const currentPath = ref(window.location.pathname)
 
 export const useRouter = () => {
     const push = (path) => {
-        window.location.hash = '#' + path
+        window.history.pushState({}, '', path)
+        currentPath.value = path
+        window.scrollTo(0, 0)
     }
 
     const currentRoute = computed(() => {
-        const path = currentPath.value.replace(/^#/, '') || '/'
-        return path
+        return currentPath.value || '/'
+    })
+
+    // Listen to back/forward button
+    const onPopState = () => {
+        currentPath.value = window.location.pathname
+    }
+
+    onMounted(() => {
+        window.addEventListener('popstate', onPopState)
+    })
+
+    onUnmounted(() => {
+        window.removeEventListener('popstate', onPopState)
     })
 
     return {

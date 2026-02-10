@@ -8,12 +8,12 @@
       
       <!-- Desktop Nav -->
       <nav class="nav">
-        <a href="#/" class="nav-link" :class="{ active: currentRoute === '/' }">Portfolio</a>
-        <a href="#/education" class="nav-link" :class="{ active: currentRoute === '/education' }">Education</a>
-        <a href="#/work" class="nav-link" :class="{ active: currentRoute === '/work' }">Work</a>
-        <a href="#/leadership" class="nav-link" :class="{ active: currentRoute === '/leadership' }">Leadership</a>
-        <a href="#/awards" class="nav-link" :class="{ active: currentRoute === '/awards' }">Awards</a>
-        <a href="#/skills" class="nav-link" :class="{ active: currentRoute === '/skills' }">Skills</a>
+        <a href="/" class="nav-link" :class="{ active: currentRoute === '/' }" @click.prevent="navigateTo('/')">Portfolio</a>
+        <a href="/education" class="nav-link" :class="{ active: currentRoute === '/education' }" @click.prevent="navigateTo('/education')">Education</a>
+        <a href="/work" class="nav-link" :class="{ active: currentRoute === '/work' }" @click.prevent="navigateTo('/work')">Work</a>
+        <a href="/leadership" class="nav-link" :class="{ active: currentRoute === '/leadership' }" @click.prevent="navigateTo('/leadership')">Leadership</a>
+        <a href="/awards" class="nav-link" :class="{ active: currentRoute === '/awards' }" @click.prevent="navigateTo('/awards')">Awards</a>
+        <a href="/skills" class="nav-link" :class="{ active: currentRoute === '/skills' }" @click.prevent="navigateTo('/skills')">Skills</a>
       </nav>
       
       <!-- Desktop Actions -->
@@ -44,12 +44,12 @@
       <!-- Mobile Menu Overlay -->
       <div class="mobile-menu" :class="{ 'is-open': isMenuOpen }">
         <nav class="mobile-nav">
-          <a href="#/" class="mobile-nav-link" :class="{ active: currentRoute === '/' }" @click="closeMenu">Portfolio</a>
-          <a href="#/education" class="mobile-nav-link" :class="{ active: currentRoute === '/education' }" @click="closeMenu">Education</a>
-          <a href="#/work" class="mobile-nav-link" :class="{ active: currentRoute === '/work' }" @click="closeMenu">Work</a>
-          <a href="#/leadership" class="mobile-nav-link" :class="{ active: currentRoute === '/leadership' }" @click="closeMenu">Leadership</a>
-          <a href="#/awards" class="mobile-nav-link" :class="{ active: currentRoute === '/awards' }" @click="closeMenu">Awards</a>
-          <a href="#/skills" class="mobile-nav-link" :class="{ active: currentRoute === '/skills' }" @click="closeMenu">Skills</a>
+          <a href="/" class="mobile-nav-link" :class="{ active: currentRoute === '/' }" @click.prevent="navigateTo('/')">Portfolio</a>
+          <a href="/education" class="mobile-nav-link" :class="{ active: currentRoute === '/education' }" @click.prevent="navigateTo('/education')">Education</a>
+          <a href="/work" class="mobile-nav-link" :class="{ active: currentRoute === '/work' }" @click.prevent="navigateTo('/work')">Work</a>
+          <a href="/leadership" class="mobile-nav-link" :class="{ active: currentRoute === '/leadership' }" @click.prevent="navigateTo('/leadership')">Leadership</a>
+          <a href="/awards" class="mobile-nav-link" :class="{ active: currentRoute === '/awards' }" @click.prevent="navigateTo('/awards')">Awards</a>
+          <a href="/skills" class="mobile-nav-link" :class="{ active: currentRoute === '/skills' }" @click="navigateTo('/skills')">Skills</a>
         </nav>
 
         <div class="mobile-actions">
