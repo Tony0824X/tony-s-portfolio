@@ -13,6 +13,8 @@
     },
     "devDependencies": {
         "@vitejs/plugin-vue": "^5.0.0",
+        "axios": "^1.13.5",
+        "dotenv": "^17.2.4",
         "vite": "^5.0.0"
     }
 }
